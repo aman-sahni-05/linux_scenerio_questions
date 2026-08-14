@@ -1,0 +1,24 @@
+1. you installed a new package via apt and you want to know exact path it's executing from 
+	which pkg_name
+
+2. you want to know cpu and memory usage is happening right now, but in more cleaner UI
+	htop - not present by default in system 
+
+3. you have a dir app_log/ which have a lot of logs. package whole dir into single compressed file, extension - .tar-gz
+	tar -czf archieve.tar.gz dir/				
+	tar -xf archeieve.tar.gz
+
+4. you have a script which keeps falling. now u want to run script with extra verbose output, so u can't konw where it will fail
+	bash -x dpeloy.sh
+
+5. your running a script that produce a lot of output on scree. you want ot save tat ouput in output.log
+	./deploy.sh >> output.log					errors will print on screen, not in your file
+
+6. you runing a program and can result in error but don't want to show on terminal 
+	2>/dev/null 							a blackhole
+
+7. you want to check how long the system was running since it was last rebooted
+	uptime
+
+8. remember how path works 
+																																																																																																																									
