@@ -1,0 +1,37 @@
+This topic discusses the log file in depth.
+
+If a test fails, you will see output similar to the following:
+
+=====================================================================
+Test 1 Complete - NETWORK_DOWN_LOCAL: fail service network
+
+Test Completion Status: FAILED
+
+=====================================================================
+
+Copying log files hacmp.out and clstrmgr.debug from all nodes to
+directory /var/hacmp/cl_testtool/rg_fallover_plan.1144942311
+on node prodnode1.
+
+After that, you can examine the directory /var/hacmp/cl_testtool/rg_fallover_plan.1144942311 on node prodnode1.
+
+In the log directory, the tool creates separate files for each test. The names for the specific log files stored in the directory have this structure:
+
+<testnum>.<testname>.<node>.<logfile>
+
+where:
+
+testnum is the order in which the test appears in the test plan file
+testname is the name of the test that failed
+node is the node from which the log was collected
+logfile the source of the logging information, either the hacmp.out or clstrmgr.debug files
+For example, if the NETWORK_DOWN_LOCAL test fails and it is the first test that was run, and later in the test plan the fourth test, named RG_MOVE also fails, you will see the following files in the /var/hacmp/cl_testtool/rg_fallover_plan.1144942311 directory:
+
+1.NETWORK_DOWN_LOCAL.prodnode1.clstrmgr.debug
+1.NETWORK_DOWN_LOCAL.prodnode1.hacmp.out
+1.NETWORK_DOWN_LOCAL.prodnode2.clstrmgr.debug
+1.NETWORK_DOWN_LOCAL.prodnode2.hacmp.out
+4.RG_MOVE.prodnode1.clstrmgr.debug
+4.RG_MOVE.prodnode1.hacmp.out
+4.RG_MOVE.prodnode2.clstrmgr.debug
+4.RG_MOVE.prodnode2.hacmp.out

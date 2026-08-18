@@ -1,0 +1,25 @@
+1. You are setting up a new server and need to check which user currently logged in and what are the groups user belongs to..
+
+2. you want to see last 50 lines from a large log file  
+3. you need to create a new user on the server, named devops1
+4. you created devops1 earlier. now need to create password for it
+5. you need to delete devops1 user entirely along with home directory
+6. you want existing user devops1 to add in existing group docker, so user can run docker commands without using sudo everytime
+7. you want to see which group a specific user belongs to 
+8. you are troubleshooting and need to know who is currently logged in the server - all active sessions
+9. you want to know if there any scheduled tasks already set up for current user
+
+
+
+*** ANSWERS ***
+1. whoami		 	-	check logged in user
+   groups OR groups <username> 	-	groups user belongs to
+2. tail -n 50 log.txt
+3. useradd -m -s /bin/bash devops1		-		-m create a home directory 
+								-s /bin/bash : set default shell
+4. passwd devops1
+5. userdel -r devops1
+6. usermod -aG docker devops1	
+7. groups <username>
+8. who
+9. crontab -l
