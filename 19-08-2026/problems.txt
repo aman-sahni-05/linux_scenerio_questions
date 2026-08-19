@@ -1,0 +1,18 @@
+1. you're checking a config file, you want to see its content but with line numbers.
+2. you want to see which ports are currently open/listening on your machine/server
+3. you need to install a new package - curl 
+4. you have a app.log which is currently owned by root, you need to be owned by devops1 along with group
+5. you want to run the exit code of last command that you ran
+6. you want to run two commands in sequence, run second only if first succeed
+
+
+
+
+*** ANSWERS ***
+1. cat -n log.txt
+2. ss -tuln				-			-tuln : tcp, udp, only listening ports, numeric ouput		-		ss(socket statistics)
+3. sudo apt install curl		-		sudo apt remove curl		-		sudo apt purge curl		-		sudo apt autoremove curl
+4. sudo chown devops1:developers app.log
+5. echo $?				-			$? is special variable that hold the exit code of last command that ran
+6. command1 && command2			-			command1 || command2	: 	only run second command if first fail
+
