@@ -1,0 +1,47 @@
+1. you configured nginx on a server. want to start the nginx service and check its current status
+
+2. nginx just failed to start. you want to see its logs to know why its failing 
+
+3. you want to see all the services currently running in your system in background
+
+4. you want to check which version of package is currently installed
+
+5. find specific line of text inside multiple files at once & want to know which file each match come from 
+
+6. you have very large file - largfile.log, you want to check its exact size
+
+7. you want to count how many files in directory ( count of files )
+
+8. you want to check type of file- is it text, executable, binary or script
+
+9. how to check if two files have identical content - byte to byte
+
+10. how to check system info - its distro and version
+
+
+
+
+
+*** ANSWERS ***
+1. sudo systemctl start nginx
+   sudo systemctl status nginx
+
+2. journalctl -u nginx -f				-			-u nginx: filter logs for just unit called nginx, 	-f : keep watching, new logs 
+
+3. systemctl list-units --type=service --state=running
+
+4. apt list --installed | grep 'nodejs'			-			dpkg -l nodejs
+
+5. grep -i "timeout" /var/log/*.log
+
+6. du -h largefile.log
+
+7. ls | wc -l
+
+8. file filename
+
+9. sha256sum file1 file2
+
+10. hostnamectl 					-			cat /etc/os-release
+
+

@@ -1,0 +1,20 @@
+*** SERVICE ***
+a service often called daemon is a program that runs invisibly in the background. it wakes up, do its job & never stops
+                        ex: nginx web server - tool waiting for someone to ask for webpages, ssh - waiting patiently in background for someone to login remotely
+
+To manage these invisible programs in background there is a program called SYSTEMD.
+systemd: it's very first program that start after booting up your system. its job is to wake up all other services, monitor them, restart if they crash
+
+THE TOOL: systemctl
+just like apt is tool to talk to package manager. systemctl(SYSTEM CONTROL) is a tool to talk to systemd
+
+---COMMANDS---
+1. sudo systemctl status <service_name>                 -               it give you information about service running status, how much memory its using, show few log if something went wrong
+
+2. sudo systemctl start <service_name>
+   sudo systemctl stop <service_name>                   -               temporary, if system restart it go in default start or stop condition
+
+3. sudo systemctl restart <service_name>                -               when you change configuration, its crucial to restart service to adapt changes
+
+4. sudo systemctl enable <service_name>
+   sudo systemctl disable <service_name>                -               when system reboot start or stop this service automatically
