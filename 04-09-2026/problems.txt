@@ -1,0 +1,51 @@
+
+*** QUESTIONS ***
+1. You ssh into multiple servers, want to check which one your actually on.
+
+2. You want to check how many cpu cores your server has.
+
+3. you ran a command while ago & forget what you typed. want to see your command history
+
+4. you're writing a script and need to check does a file exists before trying to use it 
+
+5. You want to check disk usage of the root filesystem
+
+6. you want to check which shell you're currently using - bash,zsh,sh
+
+7. you want to switch to root user temporarily 
+
+8. you're checking your network configuration, specially want to see ip of your machine on its network interface
+
+9. You're checking routing - when your machine send traffic out to internet, which gateway/router does it go first
+
+10. Translate a domain name into IP address
+
+
+
+*** ANSWERS ***
+1. hostname
+
+2. nproc	-	just give no. of cores cpu have
+   lscpu	-	give detail info about cpu
+
+3. history	-	show last 1000 commands history 
+
+4. if [ -f file.txt ];then
+	echo "file exists"
+   else
+	echo "file doesn't exists"
+   fi						-		> -f: check file exists or not
+								> -d: check directory exists or not 
+
+5. df / -h
+
+6. echo $SHELL		OR 		ps -p $$ : show process id of current using shell and other info too
+
+7. su root 	OR 	su 
+
+8. ip add	OR 	ip a
+
+9. ip route	OR 	ip r
+	> the line starting with default is your default gateway 
+
+10. nslookup google.com
