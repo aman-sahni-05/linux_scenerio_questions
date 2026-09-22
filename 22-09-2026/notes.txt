@@ -1,0 +1,6 @@
+
+
+1. $VARNAME	-	used when variable stand alone
+   ${VARNAME} 	-	used when appending text immediately after the variable 
+
+2. 

@@ -1,0 +1,27 @@
+
+*** PROBLEMS ***
+1. Write a script called disk_check.sh that does this:
+	> Checks disk usage of the root filesystem (/)
+	> If usage is above 80%, print a warning message like "WARNING: Disk usage is high!" ELSE "Disk usage is normal"
+
+2. Write a script called backup.sh that:
+	> takes a directory (you can hardcode /home/devops1/data for now) and creates a timestamped backup — e.g., data_2026-09-04.tar.gz
+	> Prints a message confirming the backup was created, showing the filename
+
+
+
+
+
+
+
+*** SOLUTIONS ***
+1.	USAGE=$(df / -h | awk 'NR==2 {print $5}' | sed 's/%//')
+	THRESHOLD=80
+
+	if [ $USAGE -gt $THRESHOLD ];then
+        	ehco "Warning: Disk usage is hight - ${USAGE}"
+	else
+        	echo "Disk usage is normal - ${USAGE}"
+	fi		
+
+2. check backup.sh file
