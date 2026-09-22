@@ -1,0 +1,31 @@
+*** PROBLEMS ***
+1. You want 'date' command to just show day name
+
+2. you want to check how much swap space our system has and how much is being used - separate from regular RAM.
+
+3. You want to print value of variable you set in a script - like NAME="devops1"
+
+4. You have a script and partway through something might fall - but you want the entire script to stop immediately the moment any command fails instead of continuing on..
+
+5. You're writing a script that needs a loop through a list of files and run the same command on each one
+
+
+
+
+*** SOLUTIONS ***
+1. date +%A		-		+ tell date command- i want custom formatted output
+			-		%Y - year, %m - month, %d - day no, %H - hour, %M - minute
+
+2. free -h
+   swap memory- when running program needs more memory than physically available, instead of crashing, linux can temporarily move some inactive data from RAM onto disk space -
+   that reserved disk is called "swap". Its much slower than RAM.
+    
+3. echo $NAME
+
+4. set -e
+	> put this at top of script, if any command fail then script will stop the script immediately
+
+5. for file in *.log
+   do 
+      echo "Processing $file"
+   done
