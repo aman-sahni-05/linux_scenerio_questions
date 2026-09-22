@@ -1,0 +1,3 @@
+
+* 2>/dev/null		-		redirects only error away from your screen & throw them into black hole
+* command &> /dev/null	-		discard both normal output & error also 

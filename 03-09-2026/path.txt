@@ -1,0 +1,5 @@
+
+** $PATH Environment Variables ** 
+	> when you try to execute any command, linux need to know where that executable program lives.
+	> instead of checking entire hardrive, it check's list of folders stored in $PATH variable.
+		ex: echo $PATH 	-	to show all the folders inside path 	
