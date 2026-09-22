@@ -1,0 +1,21 @@
+
+*** SCRIPT ARGUMENT ***
+script argument allow you to pass values into a script when executing it from terminal 	
+	> ./script.sh arg1 arg2 arg3 ...
+
+
+
+POSTIONAL PARAMETERES:
+1. $0	-	Name of script itself
+2. $1	-	first argument 
+3. $2	-	second argument
+4. $9	-	ninth argument
+5. $10	-	10th argument & beyond
+6. $#	-	total no of arguments passed
+7. $@	-	all arguments passed (as array)
+8. $*	-	all arguments passed (as string)
+
+Execution:
+	> ./script.sh server1 3000
+		^	^	^
+		$0	$1	$2
