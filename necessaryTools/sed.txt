@@ -1,0 +1,22 @@
+
+*** SED (Stream Editor) ***
+Its a text editing tool but don't open interactive terminal like vim,nano. instead it edit data in command-line
+use for text replacement, delete and line editing
+SYNTAX: sed [options] 'command' filename
+
+
+MOST COMMON sed OPERATIONS:
+
+1. search & replace
+	> sed 's/old/new/' file.txt 	-	Replaces only first match on each line
+	> sed 's/old/new/g' file.txt	-	Replaces all match on every line
+
+2. Make changes in original file 
+	> sed -i 's/old/new/' file.txt 	-	by default sed don't modify original file but '-i' save changes directly to file 
+
+3. Delete Lines
+	> sed '3d' file.txt		-	Delete line 3
+	> sed '/Error/d' file.txt	-	Delete line containing error
+
+4. Delete empty lines
+	> sed '/^$/d' file.txt 

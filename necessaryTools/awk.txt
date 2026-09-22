@@ -1,0 +1,38 @@
+
+*** AWK ***
+its a text-processing tool use to scan files line-by-line, search for patterns and perform actions
+	> syntax: awk -F'seprator' 'pattern { action }' filename
+	> Pattern: should be under - /pattern/, to search for specific text
+	> action: normally print
+
+5 CORE AWK PATTERNS:
+
+1. Extract specific columns and add custom text
+	> * awk -F':' '{print "User: " $1 "\t Directory: " $6}' /etc/passwd
+
+2. Number Filtering (> , <, ==)
+	> *  ps aux | awk '$3 > 50.0 {print $2, $3, $11}'
+
+3. Text Matching (/pattern/ and ~)
+	> * awk '/FAILED/ {print $0}' /var/log/syslog
+	> * awk -F':' '$1 ~ /root/ {print $1, $3}' /etc/passwd
+
+4. Built-in Variables (NR, NF)
+	> NR = no. of rows
+	> NF = no. of fields (columns)
+	> $NF = value of very last column
+
+5. Accumulation & Summarization (BEGIN / END)
+	> free -m | awk 'NR==2 {print "Used RAM:", $3 "MB"}'
+
+
+
+>> BEGIN & END 
+1. BEGIN {...}
+	> runs once before reading any input line
+	> use to set field separators, printing table headers or initializing variables
+	> * awk 'BEGIN { FS=":"; print "USER\t\tSHELL" } { print $1 "\t\t" $7 }' /etc/passwd
+
+2. END {...}
+	> runs once after all input lines are processed
+	> use to print summary results, totals, averages or final line counts
